@@ -8,7 +8,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
-@ComponentScan("ru.job4j.accident")
+@ComponentScan("ru.job4j")
 public class WebConfig {
 
     @Bean

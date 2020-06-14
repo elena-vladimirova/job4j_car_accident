@@ -14,15 +14,17 @@
     <title>Accident</title>
 </head>
 <body>
-Hello : Accident
-User : ${user}
+<h1>Автонарушители</h1>
 <div class="container">
     <table class="table">
         <tbody>
-        <c:forEach items="${numbers}" var="number">
-            <tr valign="top">
+        <c:forEach items="${accidents}" var="accident">
+            <tr>
                 <td>
-                    ${number}
+                    ${accident.getKey()}
+                </td>
+                <td>
+                    ${accident.getValue()}
                 </td>
             </tr>
         </c:forEach>
