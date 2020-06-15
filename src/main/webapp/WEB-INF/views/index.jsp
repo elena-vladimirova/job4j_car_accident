@@ -31,5 +31,6 @@
         </tbody>
     </table>
 </div>
+<a href="<c:url value='/create'/>">Добавить инцидент</a>
 </body>
 </html>
