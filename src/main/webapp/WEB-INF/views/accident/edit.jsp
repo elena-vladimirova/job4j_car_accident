@@ -5,6 +5,7 @@
 <form  action="<c:url value='/save'/>" method='POST'>
     <table>
         <tr>
+            <td>Id:</td>
             <td>Название:</td>
             <td><input type='text' name='name'></td>
         </tr>
