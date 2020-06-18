@@ -24,5 +24,4 @@ public class AccidentMem {
     public Accident add(Integer id, Accident accident) {
         return accidents.put(id, accident);
     }
-
 }

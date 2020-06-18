@@ -2,13 +2,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <body>
-<form  action="<c:url value='/save'/>" method='POST'>
+<form action="<c:url value='/save?id=${accident.id}'/>" method='POST'>
     <table>
         <tr>
-            <td>Id:</td>
             <td>Название:</td>
-            <td><input type='text' name='name'></td>
+            <td><input type='text' name='name' value="${accident.name}"></td>
         </tr>
+        <tr>
         <tr>
             <td colspan='2'><input name="submit" type="submit" value="Сохранить" /></td>
         </tr>

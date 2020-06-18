@@ -22,7 +22,7 @@
         <c:forEach items="${accidents}" var="accident">
             <tr>
                 <td>
-                    <a href='<c:url value="/edit"/>'>
+                    <a href="<c:url value='/update?id=${accident.getKey()}'/>">
                         <i class="fa fa-edit mr-3"></i>
                     </a>
                 </td>
