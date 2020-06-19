@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import ru.job4j.accident.config.JdbcConfig;
 import ru.job4j.accident.model.Accident;
+import ru.job4j.accident.repository.AccidentHibernate;
 import ru.job4j.accident.repository.AccidentJdbcTemplate;
 import ru.job4j.accident.repository.AccidentMem;
 
@@ -47,9 +48,9 @@ public class AccidentControl {
         return "redirect:/";
     }*/
 
-    private final AccidentJdbcTemplate accidents;
+    private final AccidentHibernate accidents;
 
-    public AccidentControl(AccidentJdbcTemplate accident) {
+    public AccidentControl(AccidentHibernate accident) {
         this.accidents = accident;
     }
 
@@ -67,12 +68,6 @@ public class AccidentControl {
     @PostMapping("/save")
     public String save(@ModelAttribute Accident accident) {
         accidents.save(accident);
-        return "redirect:/";
-    }
-
-    @PostMapping("/edit")
-    public String edit(@ModelAttribute Accident accident) {
-        accidents.update(accident);
         return "redirect:/";
     }
 

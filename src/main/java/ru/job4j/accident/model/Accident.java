@@ -1,21 +1,26 @@
 package ru.job4j.accident.model;
 
+import javax.persistence.*;
 import java.util.Objects;
 
+@Entity
+@Table(name = "accident")
 public class Accident {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-    private String text;
-    private String address;
+    //private String text;
+    //private String address;
 
     public Accident() {
     }
 
-    public Accident(int id, String name, String text, String address) {
+    public Accident(int id, String name/*, String text, String address*/) {
         this.id = id;
         this.name = name;
-        this.text = text;
-        this.address = address;
+        //this.text = text;
+        //this.address = address;
     }
 
     public int getId() {
@@ -34,7 +39,7 @@ public class Accident {
         this.name = name;
     }
 
-    public String getText() {
+/*    public String getText() {
         return text;
     }
 
@@ -48,7 +53,7 @@ public class Accident {
 
     public void setAddress(String address) {
         this.address = address;
-    }
+    }*/
 
     @Override
     public boolean equals(Object o) {
@@ -56,14 +61,14 @@ public class Accident {
         if (o == null || getClass() != o.getClass()) return false;
         Accident accident = (Accident) o;
         return id == accident.id &&
-                Objects.equals(name, accident.name) &&
+                Objects.equals(name, accident.name) /*&&
                 Objects.equals(text, accident.text) &&
-                Objects.equals(address, accident.address);
+                Objects.equals(address, accident.address)*/;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, text, address);
+        return Objects.hash(id, name/*, text, address*/);
     }
 
     @Override
@@ -71,8 +76,8 @@ public class Accident {
         return "Accident{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", text='" + text + '\'' +
-                ", address='" + address + '\'' +
+                /*", text='" + text + '\'' +
+                ", address='" + address + '\'' +*/
                 '}';
     }
 }
