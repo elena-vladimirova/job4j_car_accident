@@ -17,7 +17,9 @@ public class AccidentHibernate {
 
     public Accident save(Accident accident) {
         try (Session session = sf.openSession()) {
+            session.beginTransaction();
             session.saveOrUpdate(accident);
+            session.getTransaction().commit();
             return accident;
         }
     }
