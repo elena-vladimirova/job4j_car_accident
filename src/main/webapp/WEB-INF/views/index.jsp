@@ -16,6 +16,9 @@
 </head>
 <body>
 <h1>Автонарушители</h1>
+<div>
+    Login as : ${user.username}
+</div>
 <div class="container">
     <table class="table">
         <tbody>
